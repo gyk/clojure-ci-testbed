@@ -2,6 +2,6 @@
   (:require [clojure.test :refer :all]
             [gyk.clojure-ci-testbed :refer :all]))
 
-(deftest a-test
-  (testing "FIXME, I fail."
-    (is (= 0 1))))
+(deftest two-plus-two
+  (testing "2 + 2"
+    (is (add 2 2) 4)))
