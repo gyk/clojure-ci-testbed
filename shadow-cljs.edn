@@ -1,0 +1,24 @@
+;; shadow-cljs configuration
+{:deps true
+ :nrepl {:port 8701}
+
+ :builds
+ {:app
+  {:target :browser
+   :module-loader true
+   :modules {:main {:entries [gyk.clojure-ci-testbed]
+                    :init-fn gyk.clojure-ci-testbed/init}}
+
+   :output-dir "./output/js"
+   :asset-path "/output/js"
+   :compiler-options {:infer-externs :auto
+                      :output-feature-set :es6
+                      ; :externs [...]
+                     }
+
+   :devtools
+   {:before-load gyk.clojure-ci-testbed/stop
+    :after-load gyk.clojure-ci-testbed/start
+    :preloads     [devtools.preload]}}
+  }
+}

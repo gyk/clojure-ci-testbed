@@ -7,3 +7,6 @@
 /.lein-*
 /.nrepl-history
 /.nrepl-port
+
+output
+.shadow-cljs
